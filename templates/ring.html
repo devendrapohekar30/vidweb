@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vidweb</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/ring.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!---header section is start-->
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <img src="{{url_for('static', filename='img/vidweb.png')}}" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-white font-weight-bold" href="{{url_for('index')}}">Home <span
+              class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white font-weight-bold" href="{{url_for('ring')}}">Ringtones</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mp3 Songs
+          </a>
+          <div class="dropdown-menu" aria-busy="navbarDropdown">
+
+            <a class="dropdown-item" href="{{url_for('bolywood')}}">Bollywood songs </a>
+            <a class="dropdown-item" href="{{url_for('marathi')}}">marathi songs </a>
+            <a class="dropdown-item" href="{{url_for('gujarati')}}">Gujarati songs</a>
+            <a class="dropdown-item" href="{{url_for('hariyanvi')}}">Hariyanvi songs</a>
+            <a class="dropdown-item" href="{{url_for('punjabi')}}">Punjabi songs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href=""></a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link data-toggle text-white font-weight-bold" href="{{url_for('gallary')}}">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link data-toggle text-white font-weight-bold btn btn-outline-danger  my-2 my-sm-0" href="{{url_for('logout')}}"> Logout</a>
+        </li>
+      </ul>
+
+      <div id="google_translate_element"></div>
+
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+      </script>
+
+      <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Song" aria-busy="Search">
+      <button class="btn btn-outline-warning my-2 my-sm-0 " type="submit">Search</button>
+    </form>
+    </div>
+
+    <div class="mode">
+      <span class="change">OFF</span>
+    </div>
+    <script>
+      $(".change").on("click", function () {
+        if ($("body").hasClass("dark")) {
+          $("body").removeClass("dark");
+          $(".change").text("OFF");
+        } else {
+          $("body").addClass("dark");
+          $(".change").text("ON");
+        }
+      });
+    </script>
+  </nav>
+
+  <!---end the header navigation-->
+  <main role="main">
+
+    <section class="jumbotron jumbotron-fluid text-center bg-info ">
+      <div class="container">
+        <h1 class=" font-weight-bold jumbotron-heading text-white  "> Mp3 Ringtones
+        </h1>
+
+      </div>
+    </section>
+    <!--slide animation start-->
+    <sectoin id="home">
+      <div id="slider">
+        <figure>
+          <img src="{{url_for('static', filename='img/r1 (1).jpg')}}" alt="">
+          <img src="{{url_for('static', filename='img/r1 (2).jpg')}}" alt="">
+          <img src="{{url_for('static', filename='img/r1 (3).jpg')}}" alt="">
+          <img src="img/wallpaperflare.com_wallpaper (9).jpg" alt="">
+        </figure>
+      </div>
+    </sectoin>
+    <!--slide animation end -->
+
+
+    
+
+
+    <div class="div-nogap">
+      <div class="onediv" style="margin-top: 12px" width="100%">
+        <h3 class="title1"><i class="fa fa-"></i> Mp3 Ringtones <span><a href="">View All Songs<i
+                class="fa fa-angle-double-right"></i></a></span></h3>
+        <ul>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3"><img src="{{url_for('static', filename='img/lala-li.jpg')}}" width="80px" height="80px" alt=""
+                  title="Lala Li Lala Ringtone.mp3"
+                  data-src="/imgs/updates/2101-Superhit Holi Mp3 Songs.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Lala Li Lala Ringtone</a></h3>
+              <p>Ringtone</p>
+              <span class='utag bgred'>Original Quality</span>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3"><img src="{{url_for('static', filename='img/meri ma.jpg')}}" width="80px" height="80px" alt="Mann Basiya - Stebin Ben"
+                  title="Mann Basiya - Stebin Ben" data-src="/imgs/updates/2109-Mann Basiya - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Meri Maa Ki Barabar Koi Nahi Ringtone</a></h3>
+              <p> Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3"><img src="{{url_for('static', filename='img/kacha badam.jpg')}}" width="80px" height="80px" alt="Javed Ali"
+                  title="Javed Ali" data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Kacha Badam 2 Ringtone</a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Kacha Badam 2 Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3"><img src="{{url_for('static', filename='img/tera sath.jpg')}}" width="80px" height="80px"
+                  alt="Tera Saath Ho Ringtone" title="Tera Saath Ho Ringtone"
+                  data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Tera Saath Ho Ringtone</a></h3>
+              <p>Tera Saath Ho Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3"><img src="{{url_for('static', filename='img/tarasti hai.jpg')}}" width="80px" height="80px" alt="Attack (2022) Full Album"
+                  title="Tarasti Hai Nigahen Ringtone" data-src="/imgs/updates/2104-Attack (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Tarasti Hai Nigahen Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Tarasti Hai Nigahen Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3"><img src="{{url_for('static', filename='img/tarenu.jpg')}}"
+                  width="80px" height="80px" alt="Taare Ne Pasand Menu Ringtone" title="Taare Ne Pasand Menu Ringtone"
+                  data-src="/imgs/updates/2103-Radhe Shyam (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Taare Ne Pasand Menu Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Taare Ne Pasand Menu Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3"><img src="{{url_for('static', filename='img/sajauga.jpg')}}"
+                  width="80px" height="80px" alt="Sajaunga Lutkar Bhi Ringtone" title="Sajaunga Lutkar Bhi Ringtone"
+                  data-src="/imgs/updates/2106-Udd Gaya - B Praak.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Sajaunga Lutkar Bhi Ringtone</a>
+              </h3>
+              <p>Sajaunga Lutkar Bhi Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+         
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3"><img
+                  src="{{url_for('static', filename='img/dance meri rani.jpg')}}" width="80px" height="80px" alt="Dance Meri Rani Ringtone "
+                  title="Dance Meri Rani Ringtone "
+                  data-src="/imgs/updates/2102-Heer Raanjhana - Arijit Singh.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Dance Meri Rani Ringtone </a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Dance Meri Rani Ringtone </p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Download</a>
+            </div>
+          </li>
+          
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3"><img src="{{url_for('static', filename='img/lala-li.jpg')}}" width="80px" height="80px" alt=""
+                  title="Lala Li Lala Ringtone.mp3"
+                  data-src="/imgs/updates/2101-Superhit Holi Mp3 Songs.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Lala Li Lala Ringtone</a></h3>
+              <p>Ringtone</p>
+              <span class='utag bgred'>Original Quality</span>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3"><img src="{{url_for('static', filename='img/meri ma.jpg')}}" width="80px" height="80px" alt="Mann Basiya - Stebin Ben"
+                  title="Mann Basiya - Stebin Ben" data-src="/imgs/updates/2109-Mann Basiya - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Meri Maa Ki Barabar Koi Nahi Ringtone</a></h3>
+              <p> Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3"><img src="{{url_for('static', filename='img/kacha badam.jpg')}}" width="80px" height="80px" alt="Javed Ali"
+                  title="Javed Ali" data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Kacha Badam 2 Ringtone</a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Kacha Badam 2 Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3"><img src="{{url_for('static', filename='img/tera sath.jpg')}}" width="80px" height="80px"
+                  alt="Tera Saath Ho Ringtone" title="Tera Saath Ho Ringtone"
+                  data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Tera Saath Ho Ringtone</a></h3>
+              <p>Tera Saath Ho Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3"><img src="{{url_for('static', filename='img/tarasti hai.jpg')}}" width="80px" height="80px" alt="Attack (2022) Full Album"
+                  title="Tarasti Hai Nigahen Ringtone" data-src="/imgs/updates/2104-Attack (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Tarasti Hai Nigahen Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Tarasti Hai Nigahen Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3"><img src="{{url_for('static', filename='img/tarenu.jpg')}}"
+                  width="80px" height="80px" alt="Taare Ne Pasand Menu Ringtone" title="Taare Ne Pasand Menu Ringtone"
+                  data-src="/imgs/updates/2103-Radhe Shyam (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Taare Ne Pasand Menu Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Taare Ne Pasand Menu Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3"><img src="{{url_for('static', filename='img/sajauga.jpg')}}"
+                  width="80px" height="80px" alt="Sajaunga Lutkar Bhi Ringtone" title="Sajaunga Lutkar Bhi Ringtone"
+                  data-src="/imgs/updates/2106-Udd Gaya - B Praak.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Sajaunga Lutkar Bhi Ringtone</a>
+              </h3>
+              <p>Sajaunga Lutkar Bhi Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+         
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3"><img
+                  src="{{url_for('static', filename='img/dance meri rani.jpg')}}" width="80px" height="80px" alt="Dance Meri Rani Ringtone "
+                  title="Dance Meri Rani Ringtone "
+                  data-src="/imgs/updates/2102-Heer Raanjhana - Arijit Singh.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Dance Meri Rani Ringtone </a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Dance Meri Rani Ringtone </p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Download</a>
+            </div>
+          </li>
+          
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3"><img src="{{url_for('static', filename='img/lala-li.jpg')}}" width="80px" height="80px" alt=""
+                  title="Lala Li Lala Ringtone.mp3"
+                  data-src="/imgs/updates/2101-Superhit Holi Mp3 Songs.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Lala Li Lala Ringtone</a></h3>
+              <p>Ringtone</p>
+              <span class='utag bgred'>Original Quality</span>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3"><img src="{{url_for('static', filename='img/meri ma.jpg')}}" width="80px" height="80px" alt="Mann Basiya - Stebin Ben"
+                  title="Mann Basiya - Stebin Ben" data-src="/imgs/updates/2109-Mann Basiya - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Meri Maa Ki Barabar Koi Nahi Ringtone</a></h3>
+              <p> Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3"><img src="{{url_for('static', filename='img/kacha badam.jpg')}}" width="80px" height="80px" alt="Javed Ali"
+                  title="Javed Ali" data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Kacha Badam 2 Ringtone</a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Kacha Badam 2 Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3"><img src="{{url_for('static', filename='img/tera sath.jpg')}}" width="80px" height="80px"
+                  alt="Tera Saath Ho Ringtone" title="Tera Saath Ho Ringtone"
+                  data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Tera Saath Ho Ringtone</a></h3>
+              <p>Tera Saath Ho Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3"><img src="{{url_for('static', filename='img/tarasti hai.jpg')}}" width="80px" height="80px" alt="Attack (2022) Full Album"
+                  title="Tarasti Hai Nigahen Ringtone" data-src="/imgs/updates/2104-Attack (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Tarasti Hai Nigahen Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Tarasti Hai Nigahen Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3"><img src="{{url_for('static', filename='img/tarenu.jpg')}}"
+                  width="80px" height="80px" alt="Taare Ne Pasand Menu Ringtone" title="Taare Ne Pasand Menu Ringtone"
+                  data-src="/imgs/updates/2103-Radhe Shyam (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Taare Ne Pasand Menu Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Taare Ne Pasand Menu Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3"><img src="{{url_for('static', filename='img/sajauga.jpg')}}"
+                  width="80px" height="80px" alt="Sajaunga Lutkar Bhi Ringtone" title="Sajaunga Lutkar Bhi Ringtone"
+                  data-src="/imgs/updates/2106-Udd Gaya - B Praak.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Sajaunga Lutkar Bhi Ringtone</a>
+              </h3>
+              <p>Sajaunga Lutkar Bhi Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+         
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3"><img
+                  src="{{url_for('static', filename='img/dance meri rani.jpg')}}" width="80px" height="80px" alt="Dance Meri Rani Ringtone "
+                  title="Dance Meri Rani Ringtone "
+                  data-src="/imgs/updates/2102-Heer Raanjhana - Arijit Singh.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Dance Meri Rani Ringtone </a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Dance Meri Rani Ringtone </p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Download</a>
+            </div>
+          </li>
+          
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3"><img src="{{url_for('static', filename='img/lala-li.jpg')}}" width="80px" height="80px" alt=""
+                  title="Lala Li Lala Ringtone.mp3"
+                  data-src="/imgs/updates/2101-Superhit Holi Mp3 Songs.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Lala Li Lala Ringtone</a></h3>
+              <p>Ringtone</p>
+              <span class='utag bgred'>Original Quality</span>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Lala Li Lala Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3"><img src="{{url_for('static', filename='img/meri ma.jpg')}}" width="80px" height="80px" alt="Mann Basiya - Stebin Ben"
+                  title="Mann Basiya - Stebin Ben" data-src="/imgs/updates/2109-Mann Basiya - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Meri Maa Ki Barabar Koi Nahi Ringtone</a></h3>
+              <p> Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Meri Maa Ki Barabar Koi Nahi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3"><img src="{{url_for('static', filename='img/kacha badam.jpg')}}" width="80px" height="80px" alt="Javed Ali"
+                  title="Javed Ali" data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Kacha Badam 2 Ringtone</a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Kacha Badam 2 Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Kacha Badam 2 Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3"><img src="{{url_for('static', filename='img/tera sath.jpg')}}" width="80px" height="80px"
+                  alt="Tera Saath Ho Ringtone" title="Tera Saath Ho Ringtone"
+                  data-src=""></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Tera Saath Ho Ringtone</a></h3>
+              <p>Tera Saath Ho Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tera Saath Ho Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3"><img src="{{url_for('static', filename='img/tarasti hai.jpg')}}" width="80px" height="80px" alt="Attack (2022) Full Album"
+                  title="Tarasti Hai Nigahen Ringtone" data-src="/imgs/updates/2104-Attack (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Tarasti Hai Nigahen Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Tarasti Hai Nigahen Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Tarasti Hai Nigahen Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3"><img src="{{url_for('static', filename='img/tarenu.jpg')}}"
+                  width="80px" height="80px" alt="Taare Ne Pasand Menu Ringtone" title="Taare Ne Pasand Menu Ringtone"
+                  data-src="/imgs/updates/2103-Radhe Shyam (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Taare Ne Pasand Menu Ringtone</a></h3>
+              <span class='utag bgred'>Original Quality</span>
+              <p>Taare Ne Pasand Menu Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Taare Ne Pasand Menu Ringtone.mp3">Download</a>
+            </div>
+          </li>
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3"><img src="{{url_for('static', filename='img/sajauga.jpg')}}"
+                  width="80px" height="80px" alt="Sajaunga Lutkar Bhi Ringtone" title="Sajaunga Lutkar Bhi Ringtone"
+                  data-src="/imgs/updates/2106-Udd Gaya - B Praak.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Sajaunga Lutkar Bhi Ringtone</a>
+              </h3>
+              <p>Sajaunga Lutkar Bhi Ringtone</p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Sajaunga Lutkar Bhi Ringtone.mp3">Download</a>
+            </div>
+          </li>
+         
+          <li class="tnned">
+            <div>
+              <a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3"><img
+                  src="{{url_for('static', filename='img/dance meri rani.jpg')}}" width="80px" height="80px" alt="Dance Meri Rani Ringtone "
+                  title="Dance Meri Rani Ringtone "
+                  data-src="/imgs/updates/2102-Heer Raanjhana - Arijit Singh.jpg"></a>
+            </div>
+            <div>
+              <h3><a href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Dance Meri Rani Ringtone </a></h3>
+              <span class='utag bgblue'>Original Quality</span>
+              <p>Dance Meri Rani Ringtone </p>
+            </div>
+            <div>
+              <a class="taga" href="https://pwdown.com/113506/Dance Meri Rani Ringtone  Guru Randhawa.mp3">Download</a>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+   
+        </ul>
+      </div>
+    </div>
+
+    <footer class="  text-muted bg-primary">
+      <div class="container">
+        <p class="float-right ">
+
+          <a href="#">Back to top</a>
+        </p>
+
+      </div>
+    </footer>
+</body>
+
+</html>

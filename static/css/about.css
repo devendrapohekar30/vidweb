@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #f1f1f1;
+    
+
+}
+
+
+.navlist{
+    width: 100%;
+    height:25%;
+    position: fixed;
+    padding: 2px 15%;
+    background-color:#4246f8;
+    z-index: 1000;
+    top: 1px;
+    
+
+ }
+ 
+ .navlist ul{
+    display: flex;
+    list-style: none;
+ }
+ .navlist ul li{
+    color: red;
+    background-attachment: fixed;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 50px;
+ }
+ 
+ .navlist img{
+    width: 18%;
+    float: left;
+    margin-left: -201px;
+    margin-top: -17px;
+ }
+ .navlist ul li:first-child{
+    flex: 1;
+    color: #ffffff;
+    text-align: center;
+    
+ }
+ .navlist ul a{
+    margin-top: 7%;
+    display: inline-block;
+    margin: left 60px;
+    font-family: "Century Gothic";
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration:none;
+    padding: 1%;
+    
+
+ }
+ .navlist ul a:hover{
+    color: #ff8800;
+ }
+ 
+.about-sectioin{
+    top: 20%;
+    margin-top:-15px ;
+    background: url(jnu.jpg) no-repeat left;
+    background-color: #fdfdfd;
+    padding: 100px 0;
+    background-size: 65%;
+    overflow: hidden;
+    background-image: url(jnu.jpg);
+}
+.inner-container{
+    width: 55%;
+    padding: 150px;
+    background-color:#fdfdfd;
+    float: right;
+
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-weight:800 ;
+    font-size: 30px;
+    color: rgb(113, 155, 233);
+}
+.border{
+    height: 4px;
+    width:150px ;
+    background-color:rgb(245,60,28) ;
+}
+.text{
+    font-size: 13px;
+    color: #1e07e7;
+    line-height:30px ;
+    text-align:justify ;
+    margin-bottom: 40px;
+    font-family:   sans-serif;
+}
+button{
+    padding: 8px 15px;
+    background-color:#ffa500 ;
+    border: none;
+    color: #490e79;
+    font-size: 15px;
+}
+button:hover{
+    text-decoration: underline;
+    color: #4e0aec;
+}
+@media  screen and (max-width:1200px){
+    .inner-container{
+        padding: 60px;
+    }
+    
+}
+@media screen and(max-width:1000px) {
+    .about-sectioin{
+        padding: 20px 40px 60px;
+        background-size: 100%;
+    }
+    
+}
+
+
+body{
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #f1f1f1;
+    
+
+}
+.about-sectioin1{
+    margin-top:-15px ;
+    background: url(lebhai.jpg.jpg) no-repeat left;
+    background-color: #fdfdfd;
+    padding: 100px 0;
+    background-size: 65%;
+    overflow: hidden;
+}
+.inner-container2{
+    width: 55%;
+    padding: 150px;
+    background-color:#fdfdfd;
+    float: right;
+
+}
+.inner-container2 h1{
+    margin-bottom: 30px;
+    font-weight:800 ;
+    font-size: 30px;
+    color: rgb(113, 155, 233);
+}
+.border3{
+    height: 4px;
+    width:150px ;
+    background-color:rgb(245,60,28) ;
+}
+.text4{
+    font-size: 13px;
+    color: #1e07e7;
+    line-height:30px ;
+    text-align:justify ;
+    margin-bottom: 40px;
+    font-family:   sans-serif;
+}
+button{
+    padding: 8px 15px;
+    background-color:#ffa500 ;
+    border: none;
+    color: #490e79;
+    font-size: 15px;
+}
+button:hover{
+    text-decoration: underline;
+    color: #4e0aec;
+}
+@media  screen and (max-width:1200px){
+    .inner-container2{
+        padding: 60px;
+    }
+    
+}
+@media screen and(max-width:1000px) {
+    .about-sectioin1{
+        padding: 20px 40px 60px;
+        background-size: 100%;
+    }
+    
+}

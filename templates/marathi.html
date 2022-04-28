@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vidweb</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/marathi.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <img src="{{url_for('static', filename='img/vidweb.png')}}" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-white font-weight-bold" href="{{url_for('index')}}">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white font-weight-bold" href="{{url_for('ring')}}">Ringtones</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mp3 Songs
+          </a>
+          <div class="dropdown-menu" aria-busy="navbarDropdown">
+
+            <a class="dropdown-item" href="{{url_for('bolywood')}}">Bollywood songs </a>
+            <a class="dropdown-item" href="{{url_for('marathi')}}">marathi songs </a>
+            <a class="dropdown-item" href="{{url_for('gujarati')}}">Gujarati songs</a>
+            <a class="dropdown-item" href="{{url_for('hariyanvi')}}">Hariyanvi songs</a>
+            <a class="dropdown-item" href="{{url_for('punjabi')}}">Punjabi songs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href=""></a>
+          </div>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+          <a class="nav-link data-toggle text-white font-weight-bold" href="{{url_for('gallary')}}">Gallery</a>
+        </li>
+
+
+
+
+        
+          <li class="nav-item">
+            <a class="nav-link data-toggle text-white font-weight-bold btn btn-outline-danger  my-2 my-sm-0" href="{{url_for('logout')}}"> Logout</a>
+          </li>
+        
+          
+      </ul>
+
+      <div id="google_translate_element"></div>
+
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+      </script>
+
+      <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Song" aria-busy="Search">
+      <button class="btn btn-outline-warning my-2 my-sm-0 " type="submit">Search</button>
+    </form>
+    </div>
+
+    <div class="mode">           
+      <span class="change">OFF</span>
+  </div>
+   
+  </nav>
+
+  <script>
+    $(".change").on("click", function () {
+      if ($("body").hasClass("dark")) {
+        $("body").removeClass("dark");
+        $(".change").text("OFF");
+      } else {
+        $("body").addClass("dark");
+        $(".change").text("ON");
+      }
+    });
+  </script>
+ 
+
+
+  <main role="main">
+
+    <section class="jumbotron jumbotron-fluid text-center bg-info ">
+      <div class="container">
+        <h1 class=" font-weight-bold jumbotron-heading text-white  ">    Marathi Mp3 Songs
+        </h1>
+
+      </div>
+    </section>
+
+    <sectoin id="home">
+      <div id="slider">
+        <figure>
+          <img src="{{url_for('static', filename='img/ajay atul.jpg')}}" alt="">
+          <img src="{{url_for('static', filename='img/shreya ghoshal.jpg')}}" alt="">
+          <img src="{{url_for('static', filename='img/deccan herald.jpg')}}" alt="">
+          <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (9).jpg')}}" alt="">
+        </figure>
+      </div>
+    </sectoin>
+
+
+
+
+    <div class="div-nogap">
+        <div class="onediv" style="margin-top: 12px" width="100%">
+        <h3 class="title1"><i class="fa fa-"></i> Marathi  Mp3 Songs <span><a href="">View All Songs<i class="fa fa-angle-double-right"></i></a></span></h3>
+        <ul>
+          <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113563/Saami Saami Hindi - Pushpa.mp3"><img
+                        src="{{url_for('static', filename='img/sammi.jpg')}}" width="80px" height="80px"
+                        alt="" title="Saami Saami Hindi - Pushpa (2).mp3"
+                        data-src="/imgs/updates/2101-Superhit Holi Mp3 Songs.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113563/Saami Saami Hindi - Pushpa.mp3">Saami Saami Hindi -
+                        Pushpa mp3</a></h3>
+                <p>Sunidhi Chouhan</p>
+                <span class='utag bgred'>Original Quality</span>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113563/Saami Saami Hindi - Pushpa.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113619/Ik Tu Hai - Jubin Nautiyal.mp3"><img
+                        src="{{url_for('static', filename='img/ik tu hi.jpg')}}" width="80px" height="80px"
+                        alt="Ik Tu Hai - Jubin Nautiyal" title="Ik Tu Hai - Jubin Nautiyal"
+                        data-src="/imgs/updates/2109-Mann Basiya - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="">Ik Tu Hai - Jubin Nautiyal</a></h3>
+                <p> Jubin Nautiyal</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113619/Ik Tu Hai - Jubin Nautiyal.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113563/Srivalli - Pushpa.mp3"><img
+                        src="{{url_for('static', filename='img/srivalli.jpg')}}" width="80px" height="80px"
+                        alt="Javed Ali" title="Javed Ali" data-src=""></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113563/Srivalli - Pushpa.mp3">Srivalli - Pushpa mp3</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Javed Ali</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113563/Srivalli - Pushpa.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Jo Mujhe Deewana Kar De - Tulsi Kumar.mp3"><img
+                        src="{{url_for('static', filename='img/jo mujhe deewana kar.jpg')}}" width="80px"
+                        height="80px" alt="" title="" data-src=""></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Jo Mujhe Deewana Kar De - Tulsi Kumar.mp3">Jo Mujhe
+                        Deewana Kar De - Tulsi Kumar.mp3</a></h3>
+                <p> Tulsi Kumar</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113604/Jo Mujhe Deewana Kar De - Tulsi Kumar.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Mast Nazron Se.mp3"><img
+                        src="{{url_for('static', filename='img/Mast-Nazron-Se.jpg')}}" width="80px"
+                        height="80px" alt="Mast Nazron Se.mp3" title="Mast Nazron Se.mp3" data-src=""></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Mast Nazron Se.mp3"></a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Jubin Nautiyal</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Mast Nazron Se.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113603/Bas Pyar Tera Sacha.mp3"><img
+                        src="{{url_for('static', filename='img/pyar tera sacha.jpg')}}" width="80px"
+                        height="80px" alt="Bas Pyar Tera Sacha" title="Bas Pyar Tera Sacha.mp3"
+                        data-src=""></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113603/Bas Pyar Tera Sacha.mp3">
+                        Bas Pyar Tera Sacha</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Naved Shaikh & Ali Fiashal</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113603/Bas Pyar Tera Sacha.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113605/Udd Gaya - B Praak.mp3"><img
+                        src="{{url_for('static', filename='img/udd gaya.jpg')}}" width="80px" height="80px"
+                        alt="Udd Gaya - B Praak" title="Udd Gaya - B Praak"
+                        data-src="/imgs/updates/2106-Udd Gaya - B Praak.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113605/Udd Gaya - B Praak.mp3">Udd
+                        Gaya - B Praak</a></h3>
+                <p>Jaani</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113605/Udd Gaya - B Praak.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113546/Meri Aashiqui - Ananya Chakraborty.mp3"><img
+                        src="{{url_for('static', filename='img/meri aashiqui.jpg')}}" width="80px"
+                        height="80px" alt="Meri Aashiqui - Ananya Chakraborty"
+                        title="Meri Aashiqui - Ananya Chakraborty"
+                        data-src="/imgs/updates/2105-Meri Aashiqui - Ananya Chakraborty.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113546/Meri Aashiqui - Ananya Chakraborty.mp3">Meri
+                        Aashiqui - Ananya Chakraborty</a></h3>
+                <p>Himesh Reshammiya</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113546/Meri Aashiqui - Ananya Chakraborty.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113617/Heer Raanjhana - Arijit Singh.mp3"><img
+                        src="{{url_for('static', filename='img/heer-raanjhana.jpg')}}" width="80px"
+                        height="80px" alt="Heer Raanjhana - Arijit Singh"
+                        title="Heer Raanjhana - Arijit Singh"
+                        data-src="/imgs/updates/2102-Heer Raanjhana - Arijit Singh.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113617/Heer Raanjhana - Arijit Singh.mp3">Heer
+                        Raanjhana - Arijit Singh</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Bachchhan Paandey</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113617/Heer Raanjhana - Arijit Singh.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Goriye - Darshan Raval.mp3"><img
+                        src="{{url_for('static', filename='img/goriye.jpg')}}" width="80px" height="80px"
+                        alt="Goriye - Darshan Raval" title="Goriye - Darshan Raval"
+                        data-src="/imgs/updates/2100-Goriye - Darshan Raval.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Goriye - Darshan Raval.mp3">Goriye
+                        - Darshan Raval</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Lijo George</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Goriye - Darshan Raval.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/12326/Tu Hai Meri - Jubin Nautiyal 320Kbps.mp3"><img
+                        src="{{url_for('static', filename='img/ik tu hi.jpg')}}" width="80px" height="80px"
+                        alt="Ik Tu Hai - Jubin Nautiyal" title="Ik Tu Hai - Jubin Nautiyal"
+                        data-src="/imgs/updates/2099-Ik Tu Hai - Jubin Nautiyal.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/12326/Tu Hai Meri - Jubin Nautiyal 320Kbps.mp3">Ik
+                        Tu Hai - Jubin Nautiyal</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Attack</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/12326/Tu Hai Meri - Jubin Nautiyal 320Kbps.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Kuch Baatein - Jubin Nautiyal.mp3"><img
+                        src="{{url_for('static', filename='img/Kuch Baatein.jpg')}}" width="80px"
+                        height="80px" alt="Kuch Baatein - Jubin Nautiyal"
+                        title="Kuch Baatein - Jubin Nautiyal"
+                        data-src="/imgs/updates/2098-Kuch Baatein - Jubin Nautiyal.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Kuch Baatein - Jubin Nautiyal.mp3">Kuch
+                        Baatein - Jubin Nautiyal</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Payal Dev</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113604/Kuch Baatein - Jubin Nautiyal.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Shonk Se - Afsana Khan.mp3"><img
+                        src="{{url_for('static', filename='img/shonk se.jpg')}}" width="80px" height="80px"
+                        alt="Shonk Se - Afsana Khan" title="Shonk Se - Afsana Khan"
+                        data-src="/imgs/updates/2097-Shonk Se - Afsana Khan.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Shonk Se - Afsana Khan.mp3">Shonk
+                        Se - Afsana Khan</a></h3>
+                <p>Gaurav & Kartik </p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Shonk Se - Afsana Khan.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113603/Haye Mazay.mp3"><img
+                        src="{{url_for('static', filename='img/haye.jpg')}}" width="80px" height="80px"
+                        alt="Haye Mazay - Preet Sandhu" title="Haye Mazay - Preet Sandhu"
+                        data-src="/imgs/updates/2096-Haye Mazay - Preet Sandhu.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113603/Haye Mazay.mp3">Haye
+                        Mazay - Preet Sandhu</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Reels Trending</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113603/Haye Mazay.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Tabahi - Badshah.mp3"><img
+                        src="{{url_for('static', filename='img/tabahi.jpg')}}" width="80px" height="80px"
+                        alt="Tabahi - Badshah" title="Tabahi - Badshah"
+                        data-src="/imgs/updates/2093-Tabahi - Badshah.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Tabahi - Badshah.mp3">Tabahi
+                        - Badshah</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Hiten</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Tabahi - Badshah.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113598/Main Ishq Mein Hoon - Radhe Shyam.mp3"><img
+                        src="{{url_for('static', filename='img/main isq.jpg')}}" width="80px" height="80px"
+                        alt="Main Ishq Mein Hoon - Radhe Shyam" title="Main Ishq Mein Hoon - Radhe Shyam"
+                        data-src="/imgs/updates/2095-Main Ishq Mein Hoon - Radhe Shyam.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113598/Main Ishq Mein Hoon - Radhe Shyam.mp3">Main
+                        Ishq Mein Hoon - Radhe Shyam</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Manan Bhardwaj</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113598/Main Ishq Mein Hoon - Radhe Shyam.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113617/Saare Bolo Bewafa - Bachchhan Paandey.mp3"><img
+                        src="{{url_for('static', filename='img/sarebolo.jpg')}}" width="80px" height="80px"
+                        alt="Saare Bolo Bewafa -  B Praak" title="Saare Bolo Bewafa -  B Praak"
+                        data-src="/imgs/updates/2094-Saare Bolo Bewafa -  B Praak.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113617/Saare Bolo Bewafa - Bachchhan Paandey.mp3">Saare
+                        Bolo Bewafa - B Praak</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Bachchhan Paandey</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113617/Saare Bolo Bewafa - Bachchhan Paandey.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Yaaron Sab Dua Karo - Stebin Ben.mp3"><img
+                        src="{{url_for('static', filename='img/yaaron-sab.jpg')}}" width="80px"
+                        height="80px" alt="Yaaron Sab Dua Karo - Stebin Ben"
+                        title="Yaaron Sab Dua Karo - Stebin Ben"
+                        data-src="/imgs/updates/2092-Yaaron Sab Dua Karo - Stebin Ben.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Yaaron Sab Dua Karo - Stebin Ben.mp3">Yaaron
+                        Sab Dua Karo - Stebin Ben</a></h3>
+                <p>Meet Bros</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113604/Yaaron Sab Dua Karo - Stebin Ben.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Punjabiyan Di Dhee - Guru Randhawa.mp3"><img
+                        src="{{url_for('static', filename='img/punjabiya.jpg')}}" width="80px" height="80px"
+                        alt="Punjabiyan Di Dhee - Guru Randhawa" title="Punjabiyan Di Dhee - Guru Randhawa"
+                        data-src="/imgs/updates/2088-Punjabiyan Di Dhee - Guru Randhawa.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Punjabiyan Di Dhee - Guru Randhawa.mp3">Punjabiyan
+                        Di Dhee - Guru Randhawa</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Bohemia</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113604/Punjabiyan Di Dhee - Guru Randhawa.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Rula Deti Hai.mp3"><img
+                        src="{{url_for('static', filename='img/rula.jpg')}}" width="80px" height="80px"
+                        alt="Rula Deti Hai - Yasser Desai" title="Rula Deti Hai - Yasser Desai"
+                        data-src="/imgs/updates/2091-Rula Deti Hai - Yasser Desai.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Rula Deti Hai.mp3">Rula
+                        Deti Hai - Yasser Desai</a></h3>
+                <p>Sukoon</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Rula Deti Hai.mp3">Download</a>
+            </div>
+        </li>
+
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113612/Meri Jaan - Gangubai.mp3"><img
+                        src="{{url_for('static', filename='img/merijan.jpg')}}" width="80px" height="80px"
+                        alt="Gangubai Kathiawadi (2022) Full Album"
+                        title="Gangubai Kathiawadi (2022) Full Album"
+                        data-src="/imgs/updates/2063-Gangubai Kathiawadi (2022) Full Album.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113612/Meri Jaan - Gangubai.mp3">Gangubai
+                        Kathiawadi (2022) Meri Jaan - Gangubai</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Arijit Singh</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113612/Meri Jaan - Gangubai.mp3">Download</a>
+            </div>
+        </li>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Narazgi - Neha Kakkar.mp3"><img
+                        src="{{url_for('static', filename='img/naraz.jpg')}}" width="80px" height="80px"
+                        alt="Narazgi - Neha Kakkar" title="Narazgi - Neha Kakkar"
+                        data-src="/imgs/updates/2087-Narazgi - Neha Kakkar.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Narazgi - Neha Kakkar.mp3">Narazgi
+                        - Neha Kakkar</a></h3>
+                <span class='utag bgblue'>Original Quality</span>
+                <p>Sonal Pradhan</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Narazgi - Neha Kakkar.mp3">Download</a>
+            </div>
+        </li>
+
+
+
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113548/Teri Aashiqui Ne Mara - Mohammed Irfan.mp3"><img
+                        src="{{url_for('static', filename='img/teri-aashiqui-ne.jpg')}}" width="80px"
+                        height="80px" alt="Teri Aashiqui Ne Mara - Mohd Irfan"
+                        title="Teri Aashiqui Ne Mara - Mohd Irfan"
+                        data-src="/imgs/updates/2086-Teri Aashiqui Ne Mara - Mohd Irfan.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113548/Teri Aashiqui Ne Mara - Mohammed Irfan.mp3">Teri
+                        Aashiqui Ne Mara - Mohd Irfan</a></h3>
+                <p>Himesh Reshammiya</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113548/Teri Aashiqui Ne Mara - Mohammed Irfan.mp3">Download</a>
+            </div>
+        </li>
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113604/Naina Mere - Suyyash Rai.mp3"><img
+                        src="{{url_for('static', filename='img/naina.jpg')}}" width="80px" height="80px"
+                        alt="Naina Mere - Suyyash Rai" title="Naina Mere - Suyyash Rai"
+                        data-src="/imgs/updates/2079-Naina Mere - Suyyash Rai.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113604/Naina Mere - Suyyash Rai.mp3">Naina
+                        Mere - Suyyash Rai</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Anmol Daniel</p>
+            </div>
+            <div>
+                <a class="taga" href="https://pwdown.com/113604/Naina Mere - Suyyash Rai.mp3">Download</a>
+            </div>
+        </li>
+
+
+
+        <li class="tnned">
+            <div>
+                <a href="https://pwdown.com/113598/Jaan Hai Meri - Radhe Shyam.mp3"><img
+                        src="{{url_for('static', filename='img/Jaan-Hai.jpg')}}" width="80px" height="80px"
+                        alt="Jaan Hai Meri - Radhe Shyam" title="Jaan Hai Meri - Radhe Shyam"
+                        data-src="/imgs/updates/2076-Jaan Hai Meri - Radhe Shyam.jpg"></a>
+            </div>
+            <div>
+                <h3><a href="https://pwdown.com/113598/Jaan Hai Meri - Radhe Shyam.mp3">Jaan
+                        Hai Meri - Radhe Shyam</a></h3>
+                <span class='utag bgred'>Original Quality</span>
+                <p>Armaan Malik</p>
+            </div>
+            <div>
+                <a class="taga"
+                    href="https://pwdown.com/113598/Jaan Hai Meri - Radhe Shyam.mp3">Download</a>
+            </div>
+        </li>
+
+
+        
+        </ul>
+        </div>
+        </div>
+
+
+
+
+
+        
+    <footer class="  text-muted bg-primary">
+      <div class="container">
+        <p class="float-right ">
+
+          <a href="#">Back to top</a>
+        </p>
+
+      </div>
+    </footer>
+</body>
+
+</html>

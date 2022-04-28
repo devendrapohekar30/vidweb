@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{vidweb}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/gallary.css')}}">
+    <link rel="stylesheet" href="gallary.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <img src="{{url_for('static', filename='img/vidweb.png')}}" width="200px" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white font-weight-bold" href="{{url_for('index')}}">Home <span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white font-weight-bold" href="{{url_for('ring')}}">Ringtones</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mp3 Songs
+                    </a>
+                    <div class="dropdown-menu" aria-busy="navbarDropdown">
+
+
+                        <a class="dropdown-item" href="{{url_for('bolywood')}}">Bollywood songs </a>
+                        <a class="dropdown-item" href="{{url_for('marathi')}}">marathi songs </a>
+                        <a class="dropdown-item" href="{{url_for('gujarati')}}">Gujarati songs</a>
+                        <a class="dropdown-item" href="{{url_for('hariyanvi')}}">Hariyanvi songs</a>
+                        <a class="dropdown-item" href="{{url_for('punjabi')}}">Punjabi songs</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link data-toggle text-white font-weight-bold" href="{{url_for('gallary')}}">
+                        Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link data-toggle text-white font-weight-bold btn btn-outline-danger  my-2 my-sm-0"
+                        href="{{url_for('logout')}}"> Logout</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Song" aria-busy="Search">
+                <button class="btn btn-outline-warning my-2 my-sm-0 " type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+
+    <main role="main">
+
+        <section class="jumbotron jumbotron-fluid text-center bg-info ">
+            <div class="container">
+                <h1 class=" font-weight-bold jumbotron-heading text-white  "> Gallery
+            </div>
+        </section>
+
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <sectoin id="home">
+                    <div id="slider">
+                        <figure>
+                            <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (9).jpg')}}"
+                                alt="">
+                            <img src="{{url_for('static', filename='img/Rashmika-Mandanna-Cute-images-scaled.jpg')}}"
+                                alt="">
+                            <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (15).jpg')}}"
+                                alt="">
+                            <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (9).jpg')}}"
+                                alt="">
+                        </figure>
+                    </div>
+                </sectoin>
+
+            </div>
+            <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <br><br><br>
+        <!-- Gallery -->
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (9).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (6).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (14).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Mountains in the Clouds" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (8).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (9).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (10).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (11).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (12).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (13).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (14).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (15).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (16).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (17).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (18).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (19).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (20).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/wallpaperflare.com_wallpaper (21).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/Rashmika-Mandanna-Cute-images-scaled.jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/Rashmika-Mandanna-Cute-Wallpaper-3.jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (12).jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/4104509.jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/Rashmika-Mandanna-Cute-images-scaled.jpg')}}"
+                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (1).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (2).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (3).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (4).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (5).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (6).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (7).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (8).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (9).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (10).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (11).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (12).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{url_for('static', filename='img/p (13).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea" />
+
+                <img src="{{url_for('static', filename='img/p (14).jpg')}}" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park" />
+            </div>
+        </div>
+        <!-- Gallery -->
+
+
+
+        <footer class="text-muted bg-primary">
+            <div class="container">
+                <p class="float-right ">
+
+                    <a href="#">Back to top</a>
+                </p>
+
+            </div>
+        </footer>
+</body>
+
+</html>
